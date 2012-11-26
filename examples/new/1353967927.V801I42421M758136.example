@@ -1,0 +1,13 @@
+Return-Path: <test@example.com>
+X-Original-To: email1@example.com
+Delivered-To: email1@example.com
+Received: from localhost (localhost [127.0.0.1])
+	by mail.example.com (Postfix) with SMTP id BC4F6421C5
+	for <email1@example.com>; Mon, 26 Nov 2012 22:11:45 +0000 (UTC)
+Message-Id: <20121126221205.BC4F6421C5@mail.example.com>
+Date: Mon, 26 Nov 2012 22:11:45 +0000 (UTC)
+From: test@example.com
+To: Email1 <email1@example.com>
+Subject: Foo to email1
+
+Foo
