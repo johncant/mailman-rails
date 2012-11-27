@@ -1,4 +1,5 @@
 require "mailman-rails/version"
+require "rubygems"
 Gem.send :require, "mailman" # Force loading of the Gem, not my file
 require 'mailman'
 require "mailman/rails"
