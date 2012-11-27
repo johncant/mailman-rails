@@ -1,5 +1,6 @@
 require "mailman-rails/version"
-require "mailman"
+Gem.send :require, "mailman" # Force loading of the Gem, not my file
+require 'mailman'
 require "mailman/rails"
 require "mailman/rails/railtie"
 require File.expand_path("../mailman", __FILE__)
