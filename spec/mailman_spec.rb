@@ -1,5 +1,7 @@
 require 'spec_helper'
 
+# WARNING - Requires mailman version from GitHub to run the tests
+
 describe Mailman do
 
   def gem_root

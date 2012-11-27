@@ -13,7 +13,11 @@ module Mailman
     self.application.instance_exec(&block)
   end
 
-  def self.start!
+  def self.run!
+
+    # Under no circumstances should Mailman itself load the Rails enviroment!
+    Mailman.config.rails_root = false
+
     self.application.run
   end
 end
