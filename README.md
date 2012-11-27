@@ -4,9 +4,10 @@ This gem helps you integrate <a href="https://github.com/titanous/mailman">ruby 
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these line to your application's Gemfile:
 
     gem 'mailman-rails'
+    gem 'mailman', :git => 'https://github.com/johncant/mailman' # You'll need to use this until my pull request has been merged
 
 And then execute:
 
