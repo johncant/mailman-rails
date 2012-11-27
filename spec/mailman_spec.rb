@@ -19,13 +19,13 @@ describe Mailman do
     # It's not true though, if one of the "ghost" specs fails, you still notice.
     spec = self
 
-    Mailman.configure do
+    Mailman::Rails.configure do
       self.maildir = "#{spec.gem_root}/tmp/examples/"
     end
 
     emails_parsed = 0
 
-    Mailman.receive do
+    Mailman::Rails.receive do
       to('email1@example') do
         route = self
         spec.instance_eval do
@@ -36,7 +36,7 @@ describe Mailman do
       end
     end
 
-    Mailman.receive do
+    Mailman::Rails.receive do
       to('email2@example') do
         route = self
         spec.instance_eval do
@@ -47,7 +47,7 @@ describe Mailman do
       end
     end
 
-    Mailman.application.process_maildir # If this had already happened, the spec would fail
+    Mailman::Rails.application.process_maildir # If this had already happened, the spec would fail
 
     emails_parsed.should == 2
 

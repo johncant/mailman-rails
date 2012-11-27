@@ -1,3 +1,5 @@
+require File.expand_path('../../../mailman-rails', __FILE__)
+
 namespace :mailman do
 
   mailman_tasks = [:start, :stop, :restart, :status]
@@ -27,7 +29,7 @@ task :mailman => :environment do
 
   Mailman.config.logger = Logger.new("#{Rails.root}/log/mailman.#{Rails.env}.log")
 
-  Mailman.run!
+  Mailman::Rails.run!
 
 end
 

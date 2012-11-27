@@ -4,10 +4,15 @@ This gem helps you integrate <a href="https://github.com/titanous/mailman">ruby 
 
 ## Installation
 
-Add these line to your application's Gemfile:
+Add this line to your application's Gemfile:
 
     gem 'mailman-rails'
-    gem 'mailman', :git => 'https://github.com/titanous/mailman' # The version in rubygems isn't yet compatible with this gem
+
+And one of these lines depending on status of pull requests, versions etc:
+
+    gem 'mailman', :git => 'https://github.com/johncant/mailman'
+    gem 'mailman', :git => 'https://github.com/titanous/mailman'
+    gem 'mailman'
 
 And then execute:
 
