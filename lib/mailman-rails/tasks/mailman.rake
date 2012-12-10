@@ -14,7 +14,7 @@ namespace :mailman do
     end
 
     task task_name do
-      Daemons.run_proc("mailman_daemon", :ARGV => [task_name.to_s]) do
+      Daemons.run_proc("mailman_daemon", :ARGV => [task_name.to_s], :dir => "#{Rails.root}/tmp/pids") do
         Rake::Task["mailman"].invoke
       end
     end
