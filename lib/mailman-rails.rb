@@ -11,12 +11,19 @@ module Mailman
     require 'mailman-rails/railtie'
 
     # Start/stop Mailman::Rails. This method might only be useful during tests. In a later version, this might be threaded to reduce overheads during testing
+
+    def self.ensure_rails_env
+      raise "please specify RAILS_ENV on the command line" if ::Rails.env.blank?
+    end
+
     def self.start
-      `cd #{::Rails.root} && env RAILS_ENV=test bundle exec rake mailman:start`
+      self.ensure_rails_env
+      `cd #{::Rails.root} && env RAILS_ENV=#{::Rails.env} bundle exec rake mailman:start`
     end
 
     def self.stop
-      `cd #{::Rails.root} && env RAILS_ENV=test bundle exec rake mailman:stop`
+      self.ensure_rails_env
+      `cd #{::Rails.root} && env RAILS_ENV=#{::Rails.env} bundle exec rake mailman:stop`
     end
 
     # Store one instance of Mailman::Application. We only need one!
