@@ -37,8 +37,8 @@ module Mailman
     def self.run!
 
       # Under no circumstances should Mailman itself load the Rails enviroment!
-      Mailman.config.rails_root = false
-
+      Mailman.config.rails_root = ''
+      
       self.application.run
     end
 
