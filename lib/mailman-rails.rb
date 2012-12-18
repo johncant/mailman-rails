@@ -8,6 +8,11 @@ require "mailman-rails/version"
 
 module Mailman
   module Rails
+
+    mattr_accessor :daemon_name
+
+    @@daemon_name = "mailman_daemon"
+
     require 'mailman-rails/railtie'
 
     # Start/stop Mailman::Rails. This method might only be useful during tests. In a later version, this might be threaded to reduce overheads during testing
