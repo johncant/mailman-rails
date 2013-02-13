@@ -27,7 +27,7 @@ Or install it yourself with:
 Put your Mailman config in config/initializers/mailman.rb
 
 Match Mailman stuff from your models:
-<pre>
+```
 class Post < ActiveRecord::Base # Or whatever
 
   Mailman::Rails.receive do
@@ -39,16 +39,16 @@ class Post < ActiveRecord::Base # Or whatever
   # The daemon would be started from the rake task but only after all the code is loaded. You need to enable cache\_classes or something to take advantage of this.
 
 end
-</pre>
+```
 
 Rake tasks
-<pre>
+```
 rake mailman              # Start Mailman service in foreground
 rake mailman:start        # Start Mailman service in background
 rake mailman:stop         # Stop Mailman service
 rake mailman:restart      # Restart Mailman service in background
 rake mailman:status       # Check Mailman service status
-</pre>
+```
 
 ## Testing with Test::Unit
 
@@ -57,9 +57,9 @@ Please see the RSpec section - the helpers contain no RSpec specific code.
 ## Testing with Cucumber
 
 In features/support/mailman.rb
-<pre>
+```
 World(Mailman::Rails::TestSupport)
-</pre>
+```
 
 Please see the RSpec section - the helpers contain no RSpec specific code.
 
@@ -68,18 +68,17 @@ Please see the RSpec section - the helpers contain no RSpec specific code.
 You can test your Mailman integration using this gem. Since Mailman::Rails::TestSupport is not specific to any testing framework, you can use it where you like!
 
 In spec/spec\_helper.rb:
-<pre>
+```
 # Existing RSpec.configure block:
 RSpec.configure do |config|
 
   include Mailman::Rails::TestSupport # Add this line
 
 end
-</pre>
+```
 
 In your spec:
-<pre>
-
+```
 RSpec.describe "Mailman Maildir integration" do
 
   before(:each) do
@@ -110,7 +109,7 @@ RSpec.describe "Mailman Maildir integration" do
   end
 
 end
-</pre>
+```
 
 ## Limitations
 
