@@ -1,4 +1,5 @@
 require File.expand_path('../../../mailman-rails', __FILE__)
+require 'daemons'
 
 
 namespace :mailman do
